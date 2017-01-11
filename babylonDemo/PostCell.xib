@@ -32,6 +32,9 @@
                     <constraint firstAttribute="bottom" secondItem="png-P8-ZRK" secondAttribute="bottom" constant="8" id="Pia-Fa-swd"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="titleLabel" destination="png-P8-ZRK" id="UaV-DN-7db"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>

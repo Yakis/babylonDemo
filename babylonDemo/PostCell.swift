@@ -10,11 +10,24 @@ import UIKit
 
 class PostCell: UITableViewCell {
 
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    
+    
+    
+    
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
 
     }
 
+    
+    
+    func setupCell (post: Post) {
+        titleLabel.text = post.title
+    }
     
     
 }

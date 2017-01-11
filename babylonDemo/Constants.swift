@@ -11,4 +11,5 @@ import UIKit
 
 struct Shortcuts {
     static let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    static let context = appDelegate.persistentContainer.viewContext
 }

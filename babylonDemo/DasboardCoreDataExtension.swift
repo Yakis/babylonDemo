@@ -15,6 +15,44 @@ extension DashboardVC: NSFetchedResultsControllerDelegate {
     
     func attemptFetch () {
         let fetchRequest: NSFetchRequest<Post> = Post.fetchRequest()
+        let idSort = NSSortDescriptor(key: "id", ascending: true)
+        fetchRequest.sortDescriptors = [idSort]
+        controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: Shortcuts.context, sectionNameKeyPath: nil, cacheName: nil)
+        do {
+            try self.controller.performFetch()
+        } catch {
+            print(error.localizedDescription)
+        }
     }
+    
+    
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.beginUpdates()
+    }
+    
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.endUpdates()
+    }
+    
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        switch type {
+        case .update:
+            if let indexPath = indexPath {
+                let postCell = tableView.cellForRow(at: indexPath) as! PostCell
+                configureCell(cell: postCell, indexPath: indexPath)
+            }
+            break
+        case .insert:
+            if let indexPath = newIndexPath {
+                tableView.insertRows(at: [indexPath], with: .fade)
+            }
+            break
+        default:
+            break
+        }
+    }
+    
     
 }
