@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import CoreData
 
 class DashboardVC: UIViewController {
 
     
     @IBOutlet weak var tableView: UITableView!
-    
+    var fetchResultsController: NSFetchedResultsController<Post>!
     
     
     override func viewDidLoad() {

@@ -20,6 +20,14 @@
 		15A28FA31E267B910072817C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15A28FA21E267B910072817C /* Assets.xcassets */; };
 		15A28FA61E267B910072817C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15A28FA41E267B910072817C /* LaunchScreen.storyboard */; };
 		15A28FB11E267B910072817C /* babylonDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A28FB01E267B910072817C /* babylonDemoTests.swift */; };
+		15E4B00B1E269F3A004C9EF4 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E4B0051E269F3A004C9EF4 /* User+CoreDataClass.swift */; };
+		15E4B00C1E269F3A004C9EF4 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E4B0061E269F3A004C9EF4 /* User+CoreDataProperties.swift */; };
+		15E4B00D1E269F3A004C9EF4 /* Comment+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E4B0071E269F3A004C9EF4 /* Comment+CoreDataClass.swift */; };
+		15E4B00E1E269F3A004C9EF4 /* Comment+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E4B0081E269F3A004C9EF4 /* Comment+CoreDataProperties.swift */; };
+		15E4B00F1E269F3A004C9EF4 /* Post+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E4B0091E269F3A004C9EF4 /* Post+CoreDataClass.swift */; };
+		15E4B0101E269F3A004C9EF4 /* Post+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E4B00A1E269F3A004C9EF4 /* Post+CoreDataProperties.swift */; };
+		15E4B0151E26A21D004C9EF4 /* DasboardCoreDataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E4B0141E26A21D004C9EF4 /* DasboardCoreDataExtension.swift */; };
+		15E4B0191E26A5F0004C9EF4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E4B0181E26A5F0004C9EF4 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +58,14 @@
 		15A28FAC1E267B910072817C /* babylonDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = babylonDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		15A28FB01E267B910072817C /* babylonDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = babylonDemoTests.swift; sourceTree = "<group>"; };
 		15A28FB21E267B910072817C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		15E4B0051E269F3A004C9EF4 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		15E4B0061E269F3A004C9EF4 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		15E4B0071E269F3A004C9EF4 /* Comment+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Comment+CoreDataClass.swift"; sourceTree = "<group>"; };
+		15E4B0081E269F3A004C9EF4 /* Comment+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Comment+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		15E4B0091E269F3A004C9EF4 /* Post+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Post+CoreDataClass.swift"; sourceTree = "<group>"; };
+		15E4B00A1E269F3A004C9EF4 /* Post+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Post+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		15E4B0141E26A21D004C9EF4 /* DasboardCoreDataExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DasboardCoreDataExtension.swift; sourceTree = "<group>"; };
+		15E4B0181E26A5F0004C9EF4 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +93,7 @@
 				154032AB1E267DC000BB6D4D /* DashboardVC.xib */,
 				154032B51E2680A100BB6D4D /* DashboardConstants */,
 				154032B41E26809400BB6D4D /* DashboardExtensions */,
-				154032B81E2683AA00BB6D4D /* PostCell.swift */,
-				154032B91E2683AA00BB6D4D /* PostCell.xib */,
+				15E4B0131E26A1FA004C9EF4 /* PostCell */,
 			);
 			name = DashboardVC;
 			sourceTree = "<group>";
@@ -95,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				154032B21E26802000BB6D4D /* DashboardTableView.swift */,
+				15E4B0141E26A21D004C9EF4 /* DasboardCoreDataExtension.swift */,
 			);
 			name = DashboardExtensions;
 			sourceTree = "<group>";
@@ -129,10 +145,12 @@
 			isa = PBXGroup;
 			children = (
 				15A28FBB1E267BBA0072817C /* AppMain */,
+				154032AF1E267DE300BB6D4D /* Controllers */,
+				15E4B0171E26A5CC004C9EF4 /* Utils */,
+				15E4B0111E26A125004C9EF4 /* Model */,
 				15A28FBC1E267BCD0072817C /* SupportingFiles */,
 				15A28FBD1E267BE20072817C /* CoreData */,
-				154032AF1E267DE300BB6D4D /* Controllers */,
-				154032B61E26810000BB6D4D /* RestApiManager.swift */,
+				15E4B0161E26A5C1004C9EF4 /* RestApiManager */,
 			);
 			path = babylonDemo;
 			sourceTree = "<group>";
@@ -171,6 +189,52 @@
 				15A28F9F1E267B910072817C /* babylonDemo.xcdatamodeld */,
 			);
 			name = CoreData;
+			sourceTree = "<group>";
+		};
+		15E4B0111E26A125004C9EF4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				15E4B0051E269F3A004C9EF4 /* User+CoreDataClass.swift */,
+				15E4B0071E269F3A004C9EF4 /* Comment+CoreDataClass.swift */,
+				15E4B0091E269F3A004C9EF4 /* Post+CoreDataClass.swift */,
+				15E4B0121E26A12C004C9EF4 /* Generated */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		15E4B0121E26A12C004C9EF4 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				15E4B0061E269F3A004C9EF4 /* User+CoreDataProperties.swift */,
+				15E4B0081E269F3A004C9EF4 /* Comment+CoreDataProperties.swift */,
+				15E4B00A1E269F3A004C9EF4 /* Post+CoreDataProperties.swift */,
+			);
+			name = Generated;
+			sourceTree = "<group>";
+		};
+		15E4B0131E26A1FA004C9EF4 /* PostCell */ = {
+			isa = PBXGroup;
+			children = (
+				154032B81E2683AA00BB6D4D /* PostCell.swift */,
+				154032B91E2683AA00BB6D4D /* PostCell.xib */,
+			);
+			name = PostCell;
+			sourceTree = "<group>";
+		};
+		15E4B0161E26A5C1004C9EF4 /* RestApiManager */ = {
+			isa = PBXGroup;
+			children = (
+				154032B61E26810000BB6D4D /* RestApiManager.swift */,
+			);
+			name = RestApiManager;
+			sourceTree = "<group>";
+		};
+		15E4B0171E26A5CC004C9EF4 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				15E4B0181E26A5F0004C9EF4 /* Constants.swift */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,12 +342,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				154032B31E26802000BB6D4D /* DashboardTableView.swift in Sources */,
+				15E4B0151E26A21D004C9EF4 /* DasboardCoreDataExtension.swift in Sources */,
 				15A28FA11E267B910072817C /* babylonDemo.xcdatamodeld in Sources */,
 				154032AC1E267DC000BB6D4D /* DashboardVC.swift in Sources */,
 				15A28F991E267B910072817C /* AppDelegate.swift in Sources */,
+				15E4B00F1E269F3A004C9EF4 /* Post+CoreDataClass.swift in Sources */,
 				154032B11E267DFD00BB6D4D /* DashboardConstants.swift in Sources */,
+				15E4B0191E26A5F0004C9EF4 /* Constants.swift in Sources */,
+				15E4B00B1E269F3A004C9EF4 /* User+CoreDataClass.swift in Sources */,
 				154032B71E26810000BB6D4D /* RestApiManager.swift in Sources */,
+				15E4B00D1E269F3A004C9EF4 /* Comment+CoreDataClass.swift in Sources */,
 				154032A91E267D5400BB6D4D /* AppController.swift in Sources */,
+				15E4B00C1E269F3A004C9EF4 /* User+CoreDataProperties.swift in Sources */,
+				15E4B0101E269F3A004C9EF4 /* Post+CoreDataProperties.swift in Sources */,
+				15E4B00E1E269F3A004C9EF4 /* Comment+CoreDataProperties.swift in Sources */,
 				154032BA1E2683AB00BB6D4D /* PostCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
