@@ -13,3 +13,8 @@ struct Shortcuts {
     static let appDelegate = UIApplication.shared.delegate as! AppDelegate
     static let context = appDelegate.persistentContainer.viewContext
 }
+
+
+struct Endpoints {
+    static let postsList = "http://jsonplaceholder.typicode.com/posts"
+}

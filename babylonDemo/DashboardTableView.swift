@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-
+import CoreData
 
 
 extension DashboardVC: UITableViewDelegate, UITableViewDataSource {
@@ -16,6 +16,7 @@ extension DashboardVC: UITableViewDelegate, UITableViewDataSource {
     
     
     func numberOfSections(in tableView: UITableView) -> Int {
+        guard let controller = controller else {return 0}
         if let sections = controller.sections {
             return sections.count
         }
@@ -24,6 +25,7 @@ extension DashboardVC: UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard let controller = controller else {return 0}
         if let sections = controller.sections {
             let sectionInfo = sections[section]
             return sectionInfo.numberOfObjects
@@ -60,6 +62,14 @@ extension DashboardVC: UITableViewDelegate, UITableViewDataSource {
         let nib = UINib(nibName: DashboardNibs.PostCell, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: DashboardNibs.PostCell)
     }
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     

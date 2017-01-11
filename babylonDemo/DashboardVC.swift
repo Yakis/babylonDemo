@@ -19,10 +19,10 @@ class DashboardVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-        // addDummyData()
-        attemptFetch()
+        getData(url: Endpoints.postsList)
+       // attemptFetch()
     }
-
+    
     
     func setupTableView () {
         tableView.delegate = self
@@ -30,27 +30,37 @@ class DashboardVC: UIViewController {
         registerPostCell(tableView: tableView)
     }
     
-    func addDummyData () {
-        let post = Post(context: Shortcuts.context)
-        post.title = "This is a test, just to see if CoreData is working, and it's working like a charm"
-        post.id = 1
-        post .userId = 44330
-        post.body = "xffffffdf mpamfop afpa nfpanifnipi fnoafn aionfona idubiub ga"
-        
-        let post1 = Post(context: Shortcuts.context)
-        post1.title = "This is a test, just to see if CoreData is working"
-        post1.id = 1
-        post1.userId = 44330
-        post1.body = "xffffffdf mpamfop afpa nfpanifnipi fnoafn aionfona idubiub ga"
-
-        let post2 = Post(context: Shortcuts.context)
-        post2.title = "This is a test, just to see if CoreData is working"
-        post2.id = 1
-        post2.userId = 44330
-        post2.body = "xffffffdf mpamfop afpa nfpanifnipi fnoafn aionfona idubiub ga"
+    
+    
+    func getData(url: String) {
+        RestApiManager.shared.getData(url: url, completion: { [unowned self] array in
+            DispatchQueue.main.async {
+                for post in array {
+                    self.saveData(post: post)
+                }
+                
+                self.attemptFetch()
+            }
+            
+        })
+    }
+    
+    
+    func saveData (post: JSON) {
+        guard let userId = post[PostKeys.userId] as? Int64 else {return}
+        guard let id = post[PostKeys.id] as? Int64 else {return}
+        guard let title = post[PostKeys.title] as? String else {return}
+        guard let body = post[PostKeys.body] as? String else {return}
+        let postToSave = Post(context: Shortcuts.context)
+        postToSave.title = title
+        postToSave.body = body
+        postToSave.id = id
+        postToSave.userId = userId
         Shortcuts.appDelegate.saveContext()
     }
 
    
+    
+    
 
 }

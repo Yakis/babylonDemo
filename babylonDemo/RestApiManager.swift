@@ -19,15 +19,15 @@ class RestApiManager: NSObject {
     }
 
 
-    func getData (url: String, completion: @escaping (_ json: JSON) -> ()) {
+    func getData (url: String, completion: @escaping (_ array: [JSON]) -> ()) {
         guard let endpoint = URL(string: url) else {return}
         let configuration = URLSessionConfiguration.default
         let session = URLSession(configuration: configuration)
         let task = session.dataTask(with: endpoint, completionHandler: {data, response, error in
             if let data = data {
                 do {
-                    let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! JSON
-                    completion(json)
+                    let array = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [JSON]
+                    completion(array)
                 } catch {
                     print(error.localizedDescription)
                 }

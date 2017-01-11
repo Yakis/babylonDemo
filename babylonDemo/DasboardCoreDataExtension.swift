@@ -15,17 +15,20 @@ extension DashboardVC: NSFetchedResultsControllerDelegate {
     
     func attemptFetch () {
         let fetchRequest: NSFetchRequest<Post> = Post.fetchRequest()
-        let idSort = NSSortDescriptor(key: "id", ascending: true)
+        let idSort = NSSortDescriptor(key: PostKeys.id, ascending: true)
         fetchRequest.sortDescriptors = [idSort]
         controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: Shortcuts.context, sectionNameKeyPath: nil, cacheName: nil)
         do {
             try self.controller.performFetch()
+            self.tableView.reloadData()
         } catch {
             print(error.localizedDescription)
         }
     }
     
     
+    
+    //MARK: - NSFetchedResultsController Delegate methods
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.beginUpdates()
     }
@@ -53,6 +56,7 @@ extension DashboardVC: NSFetchedResultsControllerDelegate {
             break
         }
     }
+    
     
     
 }

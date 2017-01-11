@@ -13,3 +13,10 @@ struct DashboardNibs {
     static let dashboardVC = "DashboardVC"
     static let PostCell = "PostCell"
 }
+
+struct PostKeys {
+    static let title = "title"
+    static let body = "body"
+    static let id = "id"
+    static let userId = "userId"
+}
