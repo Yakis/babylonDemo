@@ -7,9 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		154032A91E267D5400BB6D4D /* AppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154032A81E267D5400BB6D4D /* AppController.swift */; };
+		154032AC1E267DC000BB6D4D /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154032AA1E267DC000BB6D4D /* DashboardVC.swift */; };
+		154032AD1E267DC000BB6D4D /* DashboardVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 154032AB1E267DC000BB6D4D /* DashboardVC.xib */; };
+		154032B11E267DFD00BB6D4D /* DashboardConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154032B01E267DFD00BB6D4D /* DashboardConstants.swift */; };
+		154032B31E26802000BB6D4D /* DashboardTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154032B21E26802000BB6D4D /* DashboardTableView.swift */; };
+		154032B71E26810000BB6D4D /* RestApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154032B61E26810000BB6D4D /* RestApiManager.swift */; };
+		154032BA1E2683AB00BB6D4D /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154032B81E2683AA00BB6D4D /* PostCell.swift */; };
+		154032BB1E2683AB00BB6D4D /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 154032B91E2683AA00BB6D4D /* PostCell.xib */; };
 		15A28F991E267B910072817C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A28F981E267B910072817C /* AppDelegate.swift */; };
-		15A28F9B1E267B910072817C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A28F9A1E267B910072817C /* ViewController.swift */; };
-		15A28F9E1E267B910072817C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15A28F9C1E267B910072817C /* Main.storyboard */; };
 		15A28FA11E267B910072817C /* babylonDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 15A28F9F1E267B910072817C /* babylonDemo.xcdatamodeld */; };
 		15A28FA31E267B910072817C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15A28FA21E267B910072817C /* Assets.xcassets */; };
 		15A28FA61E267B910072817C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15A28FA41E267B910072817C /* LaunchScreen.storyboard */; };
@@ -27,10 +33,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		154032A81E267D5400BB6D4D /* AppController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppController.swift; sourceTree = "<group>"; };
+		154032AA1E267DC000BB6D4D /* DashboardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
+		154032AB1E267DC000BB6D4D /* DashboardVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardVC.xib; sourceTree = "<group>"; };
+		154032B01E267DFD00BB6D4D /* DashboardConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardConstants.swift; sourceTree = "<group>"; };
+		154032B21E26802000BB6D4D /* DashboardTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardTableView.swift; sourceTree = "<group>"; };
+		154032B61E26810000BB6D4D /* RestApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestApiManager.swift; sourceTree = "<group>"; };
+		154032B81E2683AA00BB6D4D /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		154032B91E2683AA00BB6D4D /* PostCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
 		15A28F951E267B910072817C /* babylonDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = babylonDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15A28F981E267B910072817C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		15A28F9A1E267B910072817C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		15A28F9D1E267B910072817C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		15A28FA01E267B910072817C /* babylonDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = babylonDemo.xcdatamodel; sourceTree = "<group>"; };
 		15A28FA21E267B910072817C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		15A28FA51E267B910072817C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -58,6 +70,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		154032AE1E267DDA00BB6D4D /* DashboardVC */ = {
+			isa = PBXGroup;
+			children = (
+				154032AA1E267DC000BB6D4D /* DashboardVC.swift */,
+				154032AB1E267DC000BB6D4D /* DashboardVC.xib */,
+				154032B51E2680A100BB6D4D /* DashboardConstants */,
+				154032B41E26809400BB6D4D /* DashboardExtensions */,
+				154032B81E2683AA00BB6D4D /* PostCell.swift */,
+				154032B91E2683AA00BB6D4D /* PostCell.xib */,
+			);
+			name = DashboardVC;
+			sourceTree = "<group>";
+		};
+		154032AF1E267DE300BB6D4D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				154032AE1E267DDA00BB6D4D /* DashboardVC */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		154032B41E26809400BB6D4D /* DashboardExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				154032B21E26802000BB6D4D /* DashboardTableView.swift */,
+			);
+			name = DashboardExtensions;
+			sourceTree = "<group>";
+		};
+		154032B51E2680A100BB6D4D /* DashboardConstants */ = {
+			isa = PBXGroup;
+			children = (
+				154032B01E267DFD00BB6D4D /* DashboardConstants.swift */,
+			);
+			name = DashboardConstants;
+			sourceTree = "<group>";
+		};
 		15A28F8C1E267B900072817C = {
 			isa = PBXGroup;
 			children = (
@@ -79,13 +128,11 @@
 		15A28F971E267B910072817C /* babylonDemo */ = {
 			isa = PBXGroup;
 			children = (
-				15A28F981E267B910072817C /* AppDelegate.swift */,
-				15A28F9A1E267B910072817C /* ViewController.swift */,
-				15A28F9C1E267B910072817C /* Main.storyboard */,
-				15A28FA21E267B910072817C /* Assets.xcassets */,
-				15A28FA41E267B910072817C /* LaunchScreen.storyboard */,
-				15A28FA71E267B910072817C /* Info.plist */,
-				15A28F9F1E267B910072817C /* babylonDemo.xcdatamodeld */,
+				15A28FBB1E267BBA0072817C /* AppMain */,
+				15A28FBC1E267BCD0072817C /* SupportingFiles */,
+				15A28FBD1E267BE20072817C /* CoreData */,
+				154032AF1E267DE300BB6D4D /* Controllers */,
+				154032B61E26810000BB6D4D /* RestApiManager.swift */,
 			);
 			path = babylonDemo;
 			sourceTree = "<group>";
@@ -97,6 +144,33 @@
 				15A28FB21E267B910072817C /* Info.plist */,
 			);
 			path = babylonDemoTests;
+			sourceTree = "<group>";
+		};
+		15A28FBB1E267BBA0072817C /* AppMain */ = {
+			isa = PBXGroup;
+			children = (
+				15A28F981E267B910072817C /* AppDelegate.swift */,
+				154032A81E267D5400BB6D4D /* AppController.swift */,
+			);
+			name = AppMain;
+			sourceTree = "<group>";
+		};
+		15A28FBC1E267BCD0072817C /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				15A28FA21E267B910072817C /* Assets.xcassets */,
+				15A28FA41E267B910072817C /* LaunchScreen.storyboard */,
+				15A28FA71E267B910072817C /* Info.plist */,
+			);
+			name = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		15A28FBD1E267BE20072817C /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				15A28F9F1E267B910072817C /* babylonDemo.xcdatamodeld */,
+			);
+			name = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,8 +257,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				15A28FA61E267B910072817C /* LaunchScreen.storyboard in Resources */,
+				154032AD1E267DC000BB6D4D /* DashboardVC.xib in Resources */,
 				15A28FA31E267B910072817C /* Assets.xcassets in Resources */,
-				15A28F9E1E267B910072817C /* Main.storyboard in Resources */,
+				154032BB1E2683AB00BB6D4D /* PostCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,9 +277,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				154032B31E26802000BB6D4D /* DashboardTableView.swift in Sources */,
 				15A28FA11E267B910072817C /* babylonDemo.xcdatamodeld in Sources */,
-				15A28F9B1E267B910072817C /* ViewController.swift in Sources */,
+				154032AC1E267DC000BB6D4D /* DashboardVC.swift in Sources */,
 				15A28F991E267B910072817C /* AppDelegate.swift in Sources */,
+				154032B11E267DFD00BB6D4D /* DashboardConstants.swift in Sources */,
+				154032B71E26810000BB6D4D /* RestApiManager.swift in Sources */,
+				154032A91E267D5400BB6D4D /* AppController.swift in Sources */,
+				154032BA1E2683AB00BB6D4D /* PostCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,14 +307,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		15A28F9C1E267B910072817C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				15A28F9D1E267B910072817C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		15A28FA41E267B910072817C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -410,6 +482,7 @@
 				15A28FB71E267B910072817C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		15A28FB81E267B910072817C /* Build configuration list for PBXNativeTarget "babylonDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -418,6 +491,7 @@
 				15A28FBA1E267B910072817C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
