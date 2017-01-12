@@ -36,10 +36,12 @@ class DashboardVC: UIViewController {
         getPostsFromDatabase()
     }
     
+    
     func setupTableView () {
         tableView.delegate = self
         tableView.dataSource = self
         registerPostCell(tableView: tableView)
+        tableView.tableFooterView = UIView()
     }
     
     
@@ -47,7 +49,6 @@ class DashboardVC: UIViewController {
     func getPostsFromServer(url: String) {
         RestApiManager.shared.getData(url: url, completion: { [unowned self] array in
             DispatchQueue.main.async {
-                //self.realm.deleteDatabase()
                 var tempPosts = [Post]()
                 for object in array {
                     let post = Post(json: object)
