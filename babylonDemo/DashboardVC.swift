@@ -20,7 +20,7 @@ class DashboardVC: UIViewController {
         super.viewDidLoad()
         setupTableView()
         attemptFetch()
-        getData(url: Endpoints.postsList)
+        getPosts(url: Endpoints.postsList)
     }
     
     
@@ -32,21 +32,20 @@ class DashboardVC: UIViewController {
     
     
     
-    func getData(url: String) {
+    func getPosts(url: String) {
         RestApiManager.shared.getData(url: url, completion: { [unowned self] array in
             DispatchQueue.main.async {
                 self.eraseDatabase()
                 for post in array {
-                    self.saveData(post: post)
+                    self.savePosts(post: post)
                 }
             }
-            
         })
     }
     
     
     
-    func saveData (post: JSON) {
+    func savePosts (post: JSON) {
         guard let userId = post[PostKeys.userId] as? Int64 else {return}
         guard let id = post[PostKeys.id] as? Int64 else {return}
         guard let title = post[PostKeys.title] as? String else {return}
@@ -61,10 +60,8 @@ class DashboardVC: UIViewController {
 
    
     func eraseDatabase () {
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Post")
-        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: EntityNames.Post)
         let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
-        
         do {
             try Shortcuts.context.execute(batchDeleteRequest)
             Shortcuts.context.reset()

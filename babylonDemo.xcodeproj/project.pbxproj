@@ -20,6 +20,14 @@
 		15A28FA31E267B910072817C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15A28FA21E267B910072817C /* Assets.xcassets */; };
 		15A28FA61E267B910072817C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15A28FA41E267B910072817C /* LaunchScreen.storyboard */; };
 		15A28FB11E267B910072817C /* babylonDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A28FB01E267B910072817C /* babylonDemoTests.swift */; };
+		15B142601E277A9E0083D42A /* DetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B1425E1E277A9E0083D42A /* DetailsVC.swift */; };
+		15B142611E277A9E0083D42A /* DetailsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15B1425F1E277A9E0083D42A /* DetailsVC.xib */; };
+		15B142651E277B2B0083D42A /* TitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B142631E277B2B0083D42A /* TitleCell.swift */; };
+		15B142661E277B2B0083D42A /* TitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15B142641E277B2B0083D42A /* TitleCell.xib */; };
+		15B1426A1E277E680083D42A /* BodyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B142681E277E680083D42A /* BodyCell.swift */; };
+		15B1426B1E277E680083D42A /* BodyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15B142691E277E680083D42A /* BodyCell.xib */; };
+		15B1426E1E277F640083D42A /* DetailsTableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B1426D1E277F640083D42A /* DetailsTableViewExtension.swift */; };
+		15B142701E2780920083D42A /* DetailsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B1426F1E2780920083D42A /* DetailsConstants.swift */; };
 		15E4B00B1E269F3A004C9EF4 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E4B0051E269F3A004C9EF4 /* User+CoreDataClass.swift */; };
 		15E4B00C1E269F3A004C9EF4 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E4B0061E269F3A004C9EF4 /* User+CoreDataProperties.swift */; };
 		15E4B00D1E269F3A004C9EF4 /* Comment+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E4B0071E269F3A004C9EF4 /* Comment+CoreDataClass.swift */; };
@@ -58,6 +66,14 @@
 		15A28FAC1E267B910072817C /* babylonDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = babylonDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		15A28FB01E267B910072817C /* babylonDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = babylonDemoTests.swift; sourceTree = "<group>"; };
 		15A28FB21E267B910072817C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		15B1425E1E277A9E0083D42A /* DetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsVC.swift; sourceTree = "<group>"; };
+		15B1425F1E277A9E0083D42A /* DetailsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailsVC.xib; sourceTree = "<group>"; };
+		15B142631E277B2B0083D42A /* TitleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleCell.swift; sourceTree = "<group>"; };
+		15B142641E277B2B0083D42A /* TitleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TitleCell.xib; sourceTree = "<group>"; };
+		15B142681E277E680083D42A /* BodyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyCell.swift; sourceTree = "<group>"; };
+		15B142691E277E680083D42A /* BodyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BodyCell.xib; sourceTree = "<group>"; };
+		15B1426D1E277F640083D42A /* DetailsTableViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsTableViewExtension.swift; sourceTree = "<group>"; };
+		15B1426F1E2780920083D42A /* DetailsConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsConstants.swift; sourceTree = "<group>"; };
 		15E4B0051E269F3A004C9EF4 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		15E4B0061E269F3A004C9EF4 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		15E4B0071E269F3A004C9EF4 /* Comment+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Comment+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -102,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				154032AE1E267DDA00BB6D4D /* DashboardVC */,
+				15B142621E277AA10083D42A /* DetailsVC */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -189,6 +206,37 @@
 				15A28F9F1E267B910072817C /* babylonDemo.xcdatamodeld */,
 			);
 			name = CoreData;
+			sourceTree = "<group>";
+		};
+		15B142621E277AA10083D42A /* DetailsVC */ = {
+			isa = PBXGroup;
+			children = (
+				15B1425E1E277A9E0083D42A /* DetailsVC.swift */,
+				15B1425F1E277A9E0083D42A /* DetailsVC.xib */,
+				15B142671E277B2F0083D42A /* TitleCell */,
+				15B1426C1E277E6B0083D42A /* BodyCell */,
+				15B1426D1E277F640083D42A /* DetailsTableViewExtension.swift */,
+				15B1426F1E2780920083D42A /* DetailsConstants.swift */,
+			);
+			name = DetailsVC;
+			sourceTree = "<group>";
+		};
+		15B142671E277B2F0083D42A /* TitleCell */ = {
+			isa = PBXGroup;
+			children = (
+				15B142631E277B2B0083D42A /* TitleCell.swift */,
+				15B142641E277B2B0083D42A /* TitleCell.xib */,
+			);
+			name = TitleCell;
+			sourceTree = "<group>";
+		};
+		15B1426C1E277E6B0083D42A /* BodyCell */ = {
+			isa = PBXGroup;
+			children = (
+				15B142681E277E680083D42A /* BodyCell.swift */,
+				15B142691E277E680083D42A /* BodyCell.xib */,
+			);
+			name = BodyCell;
 			sourceTree = "<group>";
 		};
 		15E4B0111E26A125004C9EF4 /* Model */ = {
@@ -322,8 +370,11 @@
 			files = (
 				15A28FA61E267B910072817C /* LaunchScreen.storyboard in Resources */,
 				154032AD1E267DC000BB6D4D /* DashboardVC.xib in Resources */,
+				15B1426B1E277E680083D42A /* BodyCell.xib in Resources */,
+				15B142661E277B2B0083D42A /* TitleCell.xib in Resources */,
 				15A28FA31E267B910072817C /* Assets.xcassets in Resources */,
 				154032BB1E2683AB00BB6D4D /* PostCell.xib in Resources */,
+				15B142611E277A9E0083D42A /* DetailsVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +392,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15B1426E1E277F640083D42A /* DetailsTableViewExtension.swift in Sources */,
 				154032B31E26802000BB6D4D /* DashboardTableView.swift in Sources */,
 				15E4B0151E26A21D004C9EF4 /* DasboardCoreDataExtension.swift in Sources */,
 				15A28FA11E267B910072817C /* babylonDemo.xcdatamodeld in Sources */,
@@ -353,8 +405,12 @@
 				154032B71E26810000BB6D4D /* RestApiManager.swift in Sources */,
 				15E4B00D1E269F3A004C9EF4 /* Comment+CoreDataClass.swift in Sources */,
 				154032A91E267D5400BB6D4D /* AppController.swift in Sources */,
+				15B142701E2780920083D42A /* DetailsConstants.swift in Sources */,
+				15B142651E277B2B0083D42A /* TitleCell.swift in Sources */,
 				15E4B00C1E269F3A004C9EF4 /* User+CoreDataProperties.swift in Sources */,
 				15E4B0101E269F3A004C9EF4 /* Post+CoreDataProperties.swift in Sources */,
+				15B1426A1E277E680083D42A /* BodyCell.swift in Sources */,
+				15B142601E277A9E0083D42A /* DetailsVC.swift in Sources */,
 				15E4B00E1E269F3A004C9EF4 /* Comment+CoreDataProperties.swift in Sources */,
 				154032BA1E2683AB00BB6D4D /* PostCell.swift in Sources */,
 			);
