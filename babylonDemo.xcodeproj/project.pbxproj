@@ -15,6 +15,7 @@
 		154032B71E26810000BB6D4D /* RestApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154032B61E26810000BB6D4D /* RestApiManager.swift */; };
 		154032BA1E2683AB00BB6D4D /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154032B81E2683AA00BB6D4D /* PostCell.swift */; };
 		154032BB1E2683AB00BB6D4D /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 154032B91E2683AA00BB6D4D /* PostCell.xib */; };
+		1540CC791E27FBAD00E74839 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1540CC781E27FBAD00E74839 /* Comment.swift */; };
 		15A28F991E267B910072817C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A28F981E267B910072817C /* AppDelegate.swift */; };
 		15A28FA31E267B910072817C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15A28FA21E267B910072817C /* Assets.xcassets */; };
 		15A28FA61E267B910072817C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15A28FA41E267B910072817C /* LaunchScreen.storyboard */; };
@@ -56,6 +57,7 @@
 		154032B61E26810000BB6D4D /* RestApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestApiManager.swift; sourceTree = "<group>"; };
 		154032B81E2683AA00BB6D4D /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		154032B91E2683AA00BB6D4D /* PostCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
+		1540CC781E27FBAD00E74839 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		15A28F951E267B910072817C /* babylonDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = babylonDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15A28F981E267B910072817C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15A28FA21E267B910072817C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 			children = (
 				15ADD6BF1E27D2950055226D /* Post.swift */,
 				15ADD6C31E27E7740055226D /* User.swift */,
+				1540CC781E27FBAD00E74839 /* Comment.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -472,6 +475,7 @@
 				15ADD6C41E27E7740055226D /* User.swift in Sources */,
 				15A28F991E267B910072817C /* AppDelegate.swift in Sources */,
 				154032B11E267DFD00BB6D4D /* DashboardConstants.swift in Sources */,
+				1540CC791E27FBAD00E74839 /* Comment.swift in Sources */,
 				15ADD6C01E27D2950055226D /* Post.swift in Sources */,
 				15E4B0191E26A5F0004C9EF4 /* Constants.swift in Sources */,
 				154032B71E26810000BB6D4D /* RestApiManager.swift in Sources */,

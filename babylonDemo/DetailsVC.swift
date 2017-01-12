@@ -21,11 +21,13 @@ class DetailsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getUsers(url: Endpoints.users)
-        getComments(url: Endpoints.comments)
+        getUsersFromServer(url: Endpoints.users)
+        getCommentsFromServer(url: Endpoints.comments)
         detailsTableView.rowHeight = UITableViewAutomaticDimension
         detailsTableView.estimatedRowHeight = 200
         setupTableView()
+        getUser()
+        getComments()
     }
 
     
@@ -35,37 +37,62 @@ class DetailsVC: UIViewController {
     }
     
     
-    func getUsers (url: String) {
-        guard let userId = post?.userId else {return}
-        let url = "\(url)/\(userId)"
-        RestApiManager.shared.getUser(url: url, completion: { [unowned self] json in
-            guard let id = json["id"] as? Int else {return}
-            guard let name = json["name"] as? String else {return}
-            guard let username = json["username"] as? String else {return}
-            guard let email = json["email"] as? String else {return}
-            self.user = User(id: id, name: name, username: username, email: email)
+    func getUsersFromServer (url: String) {
+        //        guard let userId = post?.userId else {return}
+        //        let url = "\(url)/\(userId)"
+        RestApiManager.shared.getData(url: url, completion: { [unowned self] array in
+            var tempUsers = [User]()
+            for json in array {
+                guard let id = json["id"] as? Int else {return}
+                guard let name = json["name"] as? String else {return}
+                guard let username = json["username"] as? String else {return}
+                guard let email = json["email"] as? String else {return}
+                let user = User(id: id, name: name, username: username, email: email)
+                tempUsers.append(user)
+            }
             DispatchQueue.main.async {
+                self.realm.saveObjects(objs: tempUsers)
+                self.getUser()
                 self.detailsTableView.reloadData()
             }
         })
     }
     
     
-    func getComments (url: String) {
-        guard let postId = post?.id else {return}
+    func getCommentsFromServer (url: String) {
         RestApiManager.shared.getData(url: url, completion: { [unowned self] array in
+            var tempComments = [Comment]()
             for object in array {
                 guard let id = object["postId"] as? Int else {return}
-                if id == postId {
-                    self.comments += 1
-                }
+                guard let postId = object["postId"] as? Int else {return}
+                guard let name = object["name"] as? String else {return}
+                guard let body = object["body"] as? String else {return}
+                guard let email = object["email"] as? String else {return}
+                let comment = Comment(id: id, postId: postId, name: name, body: body, email: email)
+                tempComments.append(comment)
             }
             DispatchQueue.main.async {
+                self.realm.saveObjects(objs: tempComments)
+                self.getComments()
                 self.detailsTableView.reloadData()
             }
         })
     }
     
+    
+    func getUser() {
+        let realm = try! Realm()
+        guard let userId = post?.userId else {return}
+        user = realm.object(ofType: User.self, forPrimaryKey: userId)
+    }
+    
+    
+    func getComments () {
+        let realm = try! Realm()
+        guard let postId = post?.id else {return}
+        let comments = realm.objects(Comment.self).filter("postId = \(postId)")
+        self.comments = comments.count
+    }
     
     
     func setupTableView () {

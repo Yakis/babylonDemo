@@ -26,14 +26,14 @@ class DashboardVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-        getPosts(url: Endpoints.postsList)
+        getPostsFromServer(url: Endpoints.postsList)
     }
     
     
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        getObjects()
+        getPosts()
     }
     
     func setupTableView () {
@@ -44,7 +44,7 @@ class DashboardVC: UIViewController {
     
     
     
-    func getPosts(url: String) {
+    func getPostsFromServer(url: String) {
         RestApiManager.shared.getData(url: url, completion: { [unowned self] array in
             DispatchQueue.main.async {
                 //self.realm.deleteDatabase()
@@ -58,25 +58,13 @@ class DashboardVC: UIViewController {
                     tempPosts.append(post)
                 }
                 self.realm.saveObjects(objs: tempPosts)
-                self.getObjects()
+                self.getPosts()
             }
         })
     }
     
     
-    func deletePosts(post: Post) {
-        do {
-            let realm = try Realm()
-        try! realm.write {
-            realm.delete(post)
-        }
-        } catch {
-            
-        }
-    }
-    
-    
-    func getObjects() {
+    func getPosts() {
         posts.removeAll()
         if let objects = realm.getObjects(type: Post.self) {
             for element in objects {
