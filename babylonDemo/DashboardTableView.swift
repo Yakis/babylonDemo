@@ -48,11 +48,11 @@ extension DashboardVC: UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let post: Post = self.controller.object(at: indexPath)
         let detailsVC = DetailsVC(nibName: DetailsNibs.detailsVC, bundle: nil)
-        let post = controller.object(at: indexPath)
-        detailsVC.post = post
         self.navigationController?.pushViewController(detailsVC, animated: true)
-        
+            detailsVC.post = post
+
     }
     
     

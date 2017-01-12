@@ -19,21 +19,21 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gNj-N3-QFo">
-                        <rect key="frame" x="8" y="8" width="304" height="20"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gNj-N3-QFo">
+                        <rect key="frame" x="8" y="8" width="304" height="25"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gnj-ZH-IAH">
-                        <rect key="frame" x="8" y="36" width="66.5" height="17"/>
-                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
-                        <nil key="textColor"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="255" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gnj-ZH-IAH">
+                        <rect key="frame" x="8" y="41" width="273.5" height="12"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="10"/>
+                        <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h5x-QB-C0C">
-                        <rect key="frame" x="280.5" y="36" width="31.5" height="17"/>
-                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
+                        <rect key="frame" x="289.5" y="41" width="22.5" height="12"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="10"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -46,7 +46,7 @@
                     <constraint firstAttribute="trailing" secondItem="gNj-N3-QFo" secondAttribute="trailing" constant="8" id="LzV-JZ-HNr"/>
                     <constraint firstItem="Gnj-ZH-IAH" firstAttribute="top" secondItem="gNj-N3-QFo" secondAttribute="bottom" constant="8" id="RSI-4x-uVy"/>
                     <constraint firstItem="h5x-QB-C0C" firstAttribute="centerY" secondItem="Gnj-ZH-IAH" secondAttribute="centerY" id="Tt1-kx-scX"/>
-                    <constraint firstItem="h5x-QB-C0C" firstAttribute="leading" secondItem="Gnj-ZH-IAH" secondAttribute="trailing" constant="206" id="glG-qk-xeD"/>
+                    <constraint firstItem="h5x-QB-C0C" firstAttribute="leading" secondItem="Gnj-ZH-IAH" secondAttribute="trailing" constant="8" id="glG-qk-xeD"/>
                     <constraint firstAttribute="leadingMargin" secondItem="Gnj-ZH-IAH" secondAttribute="leading" id="oVW-r8-vRZ"/>
                 </constraints>
             </tableViewCellContentView>

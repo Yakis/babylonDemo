@@ -19,6 +19,8 @@ class BodyCell: UITableViewCell {
         super.awakeFromNib()
     }
 
-   
+    func setupCell (text: String) {
+        self.bodyLabel.text = text
+    }
     
 }

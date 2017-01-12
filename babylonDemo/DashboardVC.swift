@@ -24,6 +24,12 @@ class DashboardVC: UIViewController {
     }
     
     
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+    }
+    
     func setupTableView () {
         tableView.delegate = self
         tableView.dataSource = self
@@ -35,7 +41,7 @@ class DashboardVC: UIViewController {
     func getPosts(url: String) {
         RestApiManager.shared.getData(url: url, completion: { [unowned self] array in
             DispatchQueue.main.async {
-                self.eraseDatabase()
+                CoreDataInteractor.eraseDatabase(entityName: EntityNames.Post, tableView: self.tableView)
                 for post in array {
                     self.savePosts(post: post)
                 }
@@ -57,18 +63,7 @@ class DashboardVC: UIViewController {
         postToSave.userId = userId
         Shortcuts.appDelegate.saveContext()
     }
-
-   
-    func eraseDatabase () {
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: EntityNames.Post)
-        let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
-        do {
-            try Shortcuts.context.execute(batchDeleteRequest)
-            Shortcuts.context.reset()
-        } catch {
-            print(error.localizedDescription)
-        }
-    }
+    
     
 
 }

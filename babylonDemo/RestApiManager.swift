@@ -35,5 +35,25 @@ class RestApiManager: NSObject {
         })
         task.resume()
     }
+    
+    
+    func getUser (url: String, completion: @escaping (_ json: JSON) -> ()) {
+        guard let endpoint = URL(string: url) else {return}
+        let configuration = URLSessionConfiguration.default
+        let session = URLSession(configuration: configuration)
+        let task = session.dataTask(with: endpoint, completionHandler: {data, response, error in
+            if let data = data {
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! JSON
+                    completion(json)
+                } catch {
+                    print(error.localizedDescription)
+                }
+            }
+        })
+        task.resume()
+    }
+
+    
 
 }
