@@ -13,6 +13,7 @@ class BodyCell: UITableViewCell {
     
     @IBOutlet weak var bodyLabel: UILabel!
     
+    @IBOutlet weak var bodyContainer: UIView!
     
     
     override func awakeFromNib() {
@@ -21,6 +22,7 @@ class BodyCell: UITableViewCell {
 
     func setupCell (text: String) {
         self.bodyLabel.text = text
+        self.bodyContainer.layer.cornerRadius = 5
     }
     
 }

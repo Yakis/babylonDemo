@@ -68,17 +68,25 @@ class DetailsVC: UIViewController {
     
     
     func getUser() {
-        let realm = try! Realm()
-        guard let userId = post?.userId else {return}
-        user = realm.object(ofType: User.self, forPrimaryKey: userId)
+        do {
+            let realm = try Realm()
+            guard let userId = post?.userId else {return}
+            user = realm.object(ofType: User.self, forPrimaryKey: userId)
+        } catch {
+            ErrorHandler.showAlert(controller: self, message: error.localizedDescription)
+        }
     }
-    
+
     
     func getComments () {
-        let realm = try! Realm()
-        guard let postId = post?.id else {return}
-        let comments = realm.objects(Comment.self).filter("\(CommentKeys.postId) = \(postId)")
-        self.comments = comments.count
+        do {
+            let realm = try Realm()
+            guard let postId = post?.id else {return}
+            let comments = realm.objects(Comment.self).filter("\(CommentKeys.postId) = \(postId)")
+            self.comments = comments.count
+        } catch {
+           ErrorHandler.showAlert(controller: self, message: error.localizedDescription)
+        }
     }
     
     

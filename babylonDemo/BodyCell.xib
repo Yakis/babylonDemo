@@ -18,21 +18,34 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="264"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="llh-gL-IL4">
-                        <rect key="frame" x="8" y="8" width="304" height="249"/>
-                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QCE-KW-7ku" userLabel="LabelContainer">
+                        <rect key="frame" x="10" y="2" width="300" height="260.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="llh-gL-IL4">
+                                <rect key="frame" x="5" y="5" width="290" height="250.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.54117647059999996" green="0.019607843140000001" blue="0.99215686270000003" alpha="0.051182577054794523" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="llh-gL-IL4" firstAttribute="top" secondItem="QCE-KW-7ku" secondAttribute="top" constant="5" id="9ob-QZ-xAt"/>
+                            <constraint firstItem="llh-gL-IL4" firstAttribute="leading" secondItem="QCE-KW-7ku" secondAttribute="leading" constant="5" id="M2x-VB-sqw"/>
+                            <constraint firstAttribute="trailing" secondItem="llh-gL-IL4" secondAttribute="trailing" constant="5" id="Ngu-ug-dVz"/>
+                            <constraint firstAttribute="bottom" secondItem="llh-gL-IL4" secondAttribute="bottom" constant="5" id="uUl-g3-NI2"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="llh-gL-IL4" secondAttribute="trailing" constant="8" id="0w7-75-cxn"/>
-                    <constraint firstItem="llh-gL-IL4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Lw3-2M-8YR"/>
-                    <constraint firstItem="llh-gL-IL4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="UrH-HP-zTf"/>
-                    <constraint firstAttribute="bottom" secondItem="llh-gL-IL4" secondAttribute="bottom" constant="8" id="u52-cf-xbj"/>
+                    <constraint firstAttribute="trailing" secondItem="QCE-KW-7ku" secondAttribute="trailing" constant="10" id="F08-Ff-Phi"/>
+                    <constraint firstItem="QCE-KW-7ku" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="H64-mj-rKx"/>
+                    <constraint firstAttribute="bottom" secondItem="QCE-KW-7ku" secondAttribute="bottom" constant="2" id="Qam-ET-NaG"/>
+                    <constraint firstItem="QCE-KW-7ku" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="RuV-Zc-G5w"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="bodyContainer" destination="QCE-KW-7ku" id="aEu-np-tg0"/>
                 <outlet property="bodyLabel" destination="llh-gL-IL4" id="5Vw-Ep-waP"/>
             </connections>
             <point key="canvasLocation" x="25" y="162.5"/>

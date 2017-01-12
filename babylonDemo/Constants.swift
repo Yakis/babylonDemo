@@ -34,6 +34,23 @@ struct Colors {
 }
 
 
+struct ErrorHandler {
+    
+    static func showAlert (controller: UIViewController, message: String) {
+        let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        controller.present(alertController, animated: true, completion: nil)
+        
+    }
+    
+}
+
+
+struct NoPosts {
+    static let message = "There is no posts yet"
+    static let font = UIFont(name: "HelveticaNeue-Light", size: 14)
+}
 
 
 let leaveEmpty = ""

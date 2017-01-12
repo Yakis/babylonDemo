@@ -14,10 +14,12 @@ class DashboardVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     let realm = RealmManager()
+    var noPostsLabel = UILabel()
     var posts: [Post] = [] {
         didSet {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
+                self.noPostsLabel.removeFromSuperview()
             }
         }
     }
@@ -34,6 +36,7 @@ class DashboardVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         getPostsFromDatabase()
+        
     }
     
     
@@ -69,9 +72,22 @@ class DashboardVC: UIViewController {
                     posts.append(post)
                 }
             }
+            showMessageIfNoPosts(array: posts)
         }
     }
     
+    
+    func showMessageIfNoPosts (array: [Object]) {
+        DispatchQueue.main.async {
+            if array.isEmpty {
+                self.noPostsLabel = UILabel(frame: self.tableView.frame)
+                self.noPostsLabel.text = NoPosts.message
+                self.noPostsLabel.font = NoPosts.font
+                self.noPostsLabel.textAlignment = .center
+                self.tableView.addSubview(self.noPostsLabel)
+            }
+        }
+    }
     
 
 }
