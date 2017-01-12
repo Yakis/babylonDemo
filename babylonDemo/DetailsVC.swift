@@ -23,8 +23,6 @@ class DetailsVC: UIViewController {
         super.viewDidLoad()
         getUsersFromServer(url: Endpoints.users)
         getCommentsFromServer(url: Endpoints.comments)
-        detailsTableView.rowHeight = UITableViewAutomaticDimension
-        detailsTableView.estimatedRowHeight = 200
         setupTableView()
         getUser()
         getComments()
@@ -38,16 +36,10 @@ class DetailsVC: UIViewController {
     
     
     func getUsersFromServer (url: String) {
-        //        guard let userId = post?.userId else {return}
-        //        let url = "\(url)/\(userId)"
         RestApiManager.shared.getData(url: url, completion: { [unowned self] array in
             var tempUsers = [User]()
             for json in array {
-                guard let id = json["id"] as? Int else {return}
-                guard let name = json["name"] as? String else {return}
-                guard let username = json["username"] as? String else {return}
-                guard let email = json["email"] as? String else {return}
-                let user = User(id: id, name: name, username: username, email: email)
+                let user = User(json: json)
                 tempUsers.append(user)
             }
             DispatchQueue.main.async {
@@ -62,13 +54,8 @@ class DetailsVC: UIViewController {
     func getCommentsFromServer (url: String) {
         RestApiManager.shared.getData(url: url, completion: { [unowned self] array in
             var tempComments = [Comment]()
-            for object in array {
-                guard let id = object["postId"] as? Int else {return}
-                guard let postId = object["postId"] as? Int else {return}
-                guard let name = object["name"] as? String else {return}
-                guard let body = object["body"] as? String else {return}
-                guard let email = object["email"] as? String else {return}
-                let comment = Comment(id: id, postId: postId, name: name, body: body, email: email)
+            for json in array {
+                let comment = Comment(json: json)
                 tempComments.append(comment)
             }
             DispatchQueue.main.async {
@@ -90,12 +77,14 @@ class DetailsVC: UIViewController {
     func getComments () {
         let realm = try! Realm()
         guard let postId = post?.id else {return}
-        let comments = realm.objects(Comment.self).filter("postId = \(postId)")
+        let comments = realm.objects(Comment.self).filter("\(CommentKeys.postId) = \(postId)")
         self.comments = comments.count
     }
     
     
     func setupTableView () {
+        detailsTableView.rowHeight = UITableViewAutomaticDimension
+        detailsTableView.estimatedRowHeight = 200
         detailsTableView.delegate = self
         detailsTableView.dataSource = self
         registerTitleCell(tableView: detailsTableView)

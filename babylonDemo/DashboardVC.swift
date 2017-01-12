@@ -33,7 +33,7 @@ class DashboardVC: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        getPosts()
+        getPostsFromDatabase()
     }
     
     func setupTableView () {
@@ -50,21 +50,17 @@ class DashboardVC: UIViewController {
                 //self.realm.deleteDatabase()
                 var tempPosts = [Post]()
                 for object in array {
-                    let userId = object["userId"] as? Int ?? 0
-                    let id = object["id"] as? Int ?? 0
-                    let title = object["title"] as? String ?? ""
-                    let body = object["body"] as? String ?? ""
-                    let post = Post(id: id, userId: userId, title: title, body: body)
+                    let post = Post(json: object)
                     tempPosts.append(post)
                 }
                 self.realm.saveObjects(objs: tempPosts)
-                self.getPosts()
+                self.getPostsFromDatabase()
             }
         })
     }
     
     
-    func getPosts() {
+    func getPostsFromDatabase() {
         posts.removeAll()
         if let objects = realm.getObjects(type: Post.self) {
             for element in objects {

@@ -31,3 +31,9 @@ struct CommentKeys {
     static let name = "name"
     static let postId = "postId"
 }
+
+
+struct LabelKeys {
+    static let author = "Author: "
+    static let comments = "Comments: "
+}

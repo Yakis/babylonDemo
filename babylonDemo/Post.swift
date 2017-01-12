@@ -13,8 +13,8 @@ class Post: Object {
     
     private(set) dynamic var id = 0
     private(set) dynamic var userId = 0
-    private(set) dynamic var title = ""
-    private(set) dynamic var body = ""
+    private(set) dynamic var title = leaveEmpty
+    private(set) dynamic var body = leaveEmpty
     
     /**
      Override Object.primaryKey() to set the model’s primary key. Declaring a primary key allows objects to be looked up and updated efficiently and enforces uniqueness for each value.
@@ -23,12 +23,11 @@ class Post: Object {
         return "id"
     }
     
-    convenience init(id: Int, userId: Int, title: String, body: String) {
+    convenience init(json: JSON) {
         self.init()
-        
-        self.id = id
-        self.userId = userId
-        self.title = title.capitalizingFirstLetter()
-        self.body = body
+        self.userId = json[PostKeys.userId] as? Int ?? 0
+        self.id = json[PostKeys.id] as? Int ?? 0
+        self.title = (json[PostKeys.title] as? String)?.capitalizingFirstLetter() ?? leaveEmpty
+        self.body = json[PostKeys.body] as? String ?? leaveEmpty
     }
 }

@@ -110,7 +110,6 @@
 				154032B51E2680A100BB6D4D /* DashboardConstants */,
 				154032B41E26809400BB6D4D /* DashboardExtensions */,
 				15E4B0131E26A1FA004C9EF4 /* PostCell */,
-				15B142761E27BFCF0083D42A /* Interactors */,
 			);
 			name = DashboardVC;
 			sourceTree = "<group>";
@@ -138,6 +137,14 @@
 				154032B01E267DFD00BB6D4D /* DashboardConstants.swift */,
 			);
 			name = DashboardConstants;
+			sourceTree = "<group>";
+		};
+		1540CC7A1E2812B200E74839 /* RealmManager */ = {
+			isa = PBXGroup;
+			children = (
+				15ADD6C11E27D38F0055226D /* RealmManager.swift */,
+			);
+			name = RealmManager;
 			sourceTree = "<group>";
 		};
 		15A28F8C1E267B900072817C = {
@@ -169,7 +176,7 @@
 				15E4B0171E26A5CC004C9EF4 /* Utils */,
 				15A28FBC1E267BCD0072817C /* SupportingFiles */,
 				15E4B0161E26A5C1004C9EF4 /* RestApiManager */,
-				15ADD6C11E27D38F0055226D /* RealmManager.swift */,
+				1540CC7A1E2812B200E74839 /* RealmManager */,
 			);
 			path = babylonDemo;
 			sourceTree = "<group>";
@@ -257,13 +264,6 @@
 				15B1426F1E2780920083D42A /* DetailsConstants.swift */,
 			);
 			name = DetailsConstants;
-			sourceTree = "<group>";
-		};
-		15B142761E27BFCF0083D42A /* Interactors */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Interactors;
 			sourceTree = "<group>";
 		};
 		15E4B0131E26A1FA004C9EF4 /* PostCell */ = {

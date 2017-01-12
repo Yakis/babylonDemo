@@ -13,7 +13,7 @@ import UIKit
 extension DashboardVC: UITableViewDelegate, UITableViewDataSource {
     
     
-    
+    //MARK: - TableView delegate methods
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -41,10 +41,6 @@ extension DashboardVC: UITableViewDelegate, UITableViewDataSource {
     
     
     
-    
-    
-    
-    
     //MARK: - Register cells
     func registerPostCell (tableView: UITableView) {
         let nib = UINib(nibName: DashboardNibs.PostCell, bundle: nil)
@@ -52,13 +48,7 @@ extension DashboardVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     
-    
-    
-    
-    
-    
-    
-    
+ 
     
     
 }

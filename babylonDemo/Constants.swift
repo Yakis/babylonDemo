@@ -27,3 +27,5 @@ struct EntityNames {
     static let User = "User"
     static let Comment = "Comment"
 }
+
+let leaveEmpty = ""
