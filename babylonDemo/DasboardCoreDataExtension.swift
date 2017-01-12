@@ -8,7 +8,7 @@
 
 import Foundation
 import CoreData
-
+import UIKit
 
 
 extension DashboardVC: NSFetchedResultsControllerDelegate {
@@ -18,9 +18,9 @@ extension DashboardVC: NSFetchedResultsControllerDelegate {
         let idSort = NSSortDescriptor(key: PostKeys.id, ascending: true)
         fetchRequest.sortDescriptors = [idSort]
         controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: Shortcuts.context, sectionNameKeyPath: nil, cacheName: nil)
+        controller.delegate = self
         do {
             try self.controller.performFetch()
-            self.tableView.reloadData()
         } catch {
             print(error.localizedDescription)
         }
@@ -41,15 +41,20 @@ extension DashboardVC: NSFetchedResultsControllerDelegate {
     
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         switch type {
+        case .insert:
+            if let indexPath = newIndexPath {
+                tableView.insertRows(at: [indexPath], with: .none)
+            }
+            break
+        case .delete:
+            if let indexPath = indexPath {
+            tableView.deleteRows(at: [indexPath], with: .none)
+            }
+            break
         case .update:
             if let indexPath = indexPath {
                 let postCell = tableView.cellForRow(at: indexPath) as! PostCell
                 configureCell(cell: postCell, indexPath: indexPath)
-            }
-            break
-        case .insert:
-            if let indexPath = newIndexPath {
-                tableView.insertRows(at: [indexPath], with: .fade)
             }
             break
         default:
