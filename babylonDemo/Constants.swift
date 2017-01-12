@@ -28,4 +28,12 @@ struct EntityNames {
     static let Comment = "Comment"
 }
 
+
+struct Colors {
+    static let deepPurple = UIColor(red: 145/255, green: 19/255, blue: 254/255, alpha: 1.0)
+}
+
+
+
+
 let leaveEmpty = ""

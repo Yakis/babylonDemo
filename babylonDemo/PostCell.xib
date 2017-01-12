@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,21 +16,31 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="png-P8-ZRK">
-                        <rect key="frame" x="8" y="8" width="304" height="27.5"/>
+                        <rect key="frame" x="12" y="8" width="300" height="27.5"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="On0-g5-GMx">
+                        <rect key="frame" x="0.0" y="0.0" width="4" height="43.5"/>
+                        <color key="backgroundColor" red="0.56470588239999997" green="0.074509803920000006" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="4" id="NJW-JC-DIj"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="png-P8-ZRK" secondAttribute="trailing" constant="8" id="JBi-ek-xnR"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="png-P8-ZRK" secondAttribute="trailing" id="1H1-eP-GOx"/>
+                    <constraint firstItem="On0-g5-GMx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="3Lm-TC-RZ4"/>
+                    <constraint firstItem="png-P8-ZRK" firstAttribute="leading" secondItem="On0-g5-GMx" secondAttribute="trailing" constant="8" id="5gE-J6-clE"/>
                     <constraint firstItem="png-P8-ZRK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="LVJ-xe-aCb"/>
-                    <constraint firstItem="png-P8-ZRK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="Od6-gC-0ra"/>
                     <constraint firstAttribute="bottom" secondItem="png-P8-ZRK" secondAttribute="bottom" constant="8" id="Pia-Fa-swd"/>
+                    <constraint firstItem="On0-g5-GMx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="bKV-js-V2G"/>
+                    <constraint firstAttribute="bottom" secondItem="On0-g5-GMx" secondAttribute="bottom" id="vL5-R9-qJZ"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

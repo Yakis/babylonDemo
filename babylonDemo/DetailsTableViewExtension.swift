@@ -30,6 +30,7 @@ extension DetailsVC: UITableViewDelegate, UITableViewDataSource {
             let title = post?.title ?? leaveEmpty
             let name = user?.name ?? leaveEmpty
             let commentsCount = comments
+            tableView.separatorColor = Colors.deepPurple
             titleCell.setupCell(title: title, userName: name, commentsCount: commentsCount)
             return titleCell
         case 1:
