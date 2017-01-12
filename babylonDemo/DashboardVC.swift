@@ -7,19 +7,25 @@
 //
 
 import UIKit
-import CoreData
+import RealmSwift
 
 class DashboardVC: UIViewController {
 
     
     @IBOutlet weak var tableView: UITableView!
-    var controller: NSFetchedResultsController<Post>!
+    let realm = RealmManager()
+    var posts: [Post] = [] {
+        didSet {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-        attemptFetch()
         getPosts(url: Endpoints.postsList)
     }
     
@@ -27,7 +33,7 @@ class DashboardVC: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-
+        getObjects()
     }
     
     func setupTableView () {
@@ -41,27 +47,44 @@ class DashboardVC: UIViewController {
     func getPosts(url: String) {
         RestApiManager.shared.getData(url: url, completion: { [unowned self] array in
             DispatchQueue.main.async {
-                CoreDataInteractor.eraseDatabase(entityName: EntityNames.Post, tableView: self.tableView)
-                for post in array {
-                    self.savePosts(post: post)
+                //self.realm.deleteDatabase()
+                var tempPosts = [Post]()
+                for object in array {
+                    let userId = object["userId"] as? Int ?? 0
+                    let id = object["id"] as? Int ?? 0
+                    let title = object["title"] as? String ?? ""
+                    let body = object["body"] as? String ?? ""
+                    let post = Post(id: id, userId: userId, title: title, body: body)
+                    tempPosts.append(post)
                 }
+                self.realm.saveObjects(objs: tempPosts)
+                self.getObjects()
             }
         })
     }
     
     
+    func deletePosts(post: Post) {
+        do {
+            let realm = try Realm()
+        try! realm.write {
+            realm.delete(post)
+        }
+        } catch {
+            
+        }
+    }
     
-    func savePosts (post: JSON) {
-        guard let userId = post[PostKeys.userId] as? Int64 else {return}
-        guard let id = post[PostKeys.id] as? Int64 else {return}
-        guard let title = post[PostKeys.title] as? String else {return}
-        guard let body = post[PostKeys.body] as? String else {return}
-        let postToSave = Post(context: Shortcuts.context)
-        postToSave.title = title
-        postToSave.body = body
-        postToSave.id = id
-        postToSave.userId = userId
-        Shortcuts.appDelegate.saveContext()
+    
+    func getObjects() {
+        posts.removeAll()
+        if let objects = realm.getObjects(type: Post.self) {
+            for element in objects {
+                if let post = element as? Post {
+                    posts.append(post)
+                }
+            }
+        }
     }
     
     

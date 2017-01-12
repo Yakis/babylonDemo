@@ -24,8 +24,8 @@ class TitleCell: UITableViewCell {
     
     func setupCell (title: String, userName: String, commentsCount: Int) {
         self.titleLabel.text = title
-        self.userNameLabel.text = userName
-        self.commentsLabel.text = "\(commentsCount)"
+        self.userNameLabel.text = "Author: \(userName)"
+        self.commentsLabel.text = "Comments: \(commentsCount)"
         
     }
     

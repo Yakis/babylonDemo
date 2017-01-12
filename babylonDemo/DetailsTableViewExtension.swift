@@ -15,7 +15,11 @@ extension DetailsVC: UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if user != nil {
         return 2
+        } else {
+            return 0
+        }
     }
     
     
@@ -23,10 +27,10 @@ extension DetailsVC: UITableViewDelegate, UITableViewDataSource {
         switch indexPath.row {
         case 0:
             let titleCell = tableView.dequeueReusableCell(withIdentifier: DetailsNibs.titleCell, for: indexPath) as! TitleCell
-            let userName = user?.name ?? "Master Yoda"
-            let commentsCount = comments ?? 0
             let title = post?.title ?? ""
-            titleCell.setupCell(title: title, userName: userName, commentsCount: commentsCount)
+            let name = user?.name ?? ""
+            let commentsCount = comments
+            titleCell.setupCell(title: title, userName: name, commentsCount: commentsCount)
             return titleCell
         case 1:
             let bodyCell = tableView.dequeueReusableCell(withIdentifier: DetailsNibs.bodyCell, for: indexPath) as! BodyCell

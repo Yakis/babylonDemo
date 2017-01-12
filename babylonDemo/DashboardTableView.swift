@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import CoreData
 
 
 extension DashboardVC: UITableViewDelegate, UITableViewDataSource {
@@ -16,43 +15,28 @@ extension DashboardVC: UITableViewDelegate, UITableViewDataSource {
     
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        guard let controller = controller else {return 0}
-        if let sections = controller.sections {
-            return sections.count
-        }
-        return 0
+        return 1
     }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let controller = controller else {return 0}
-        if let sections = controller.sections {
-            let sectionInfo = sections[section]
-            return sectionInfo.numberOfObjects
-        }
-        return 0
+        return posts.count
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let postCell = tableView.dequeueReusableCell(withIdentifier: DashboardNibs.PostCell, for: indexPath) as! PostCell
-        configureCell(cell: postCell, indexPath: indexPath)
+        let post = posts[indexPath.row]
+        postCell.setupCell(post: post)
         return postCell
     }
     
     
-    func configureCell (cell: PostCell, indexPath: IndexPath) {
-        let post = controller.object(at: indexPath)
-        cell.setupCell(post: post)
-    }
-    
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let post: Post = self.controller.object(at: indexPath)
+        let post = posts[indexPath.row]
         let detailsVC = DetailsVC(nibName: DetailsNibs.detailsVC, bundle: nil)
         self.navigationController?.pushViewController(detailsVC, animated: true)
-            detailsVC.post = post
-
+        detailsVC.post = post
     }
     
     
