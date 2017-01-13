@@ -27,6 +27,7 @@ class DashboardVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = navBarTitle
         setupTableView()
         getPostsFromServer(url: Endpoints.postsList)
     }

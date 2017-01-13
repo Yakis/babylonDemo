@@ -20,3 +20,5 @@ struct PostKeys {
     static let id = "id"
     static let userId = "userId"
 }
+
+let navBarTitle = "Posts"

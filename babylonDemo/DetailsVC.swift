@@ -21,6 +21,7 @@ class DetailsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setPostNumberTotNavBarTitle()
         getUsersFromServer(url: Endpoints.users)
         getCommentsFromServer(url: Endpoints.comments)
         setupTableView()
@@ -100,5 +101,9 @@ class DetailsVC: UIViewController {
     }
     
     
+    func setPostNumberTotNavBarTitle () {
+        guard let postId = post?.id else {return}
+        self.title = "Post no. \(postId)"
+    }
     
 }
